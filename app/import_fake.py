@@ -6,7 +6,7 @@ fake = Faker()
 
 def add_test_data(db):
     userCount = 5
-    for i in range(userCount):
+    for i in range(1, userCount+1):
         user = User(username=f'user{i}', password=f'password{i}', roles='user')
         db.session.add(user)
 
