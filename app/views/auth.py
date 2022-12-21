@@ -17,6 +17,6 @@ def login():
     user = User.query.filter_by(username=request.form['username']).first()
     if user and user.password == request.form['password']:
         access_token = create_access_token(identity=user.id)
-        return {'access_token': access_token}
+        return {'access_token': access_token, 'id':user.id}
     else:
         return 'Invalid username or password', 401
