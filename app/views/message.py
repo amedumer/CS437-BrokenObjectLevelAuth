@@ -14,8 +14,8 @@ def get_message(user_id, message_id):
     # Check for authorization
 
     # ======== PROTECTION 1: AUTHORIZATION CHECK ========
-    if get_jwt_identity() != user_id:
-        return {"error": "Not Authorized."}, 401
+    # if get_jwt_identity() != user_id:
+    #     return {"error": "Not Authorized."}, 401
     # ======== PROTECTION 1: AUTHORIZATION CHECK ========
     
     message = Message.query.get(message_id)
