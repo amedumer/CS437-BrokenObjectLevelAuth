@@ -5,12 +5,12 @@ from flask_jwt_extended import jwt_required
 from app import app
 from app.models.message import Message
 
-@app.route('/api/messages/<int:user_id>/<int:message_id>', methods=['GET'])
+@app.route('/api/messages/<user_id>/<message_id>', methods=['GET'])
 @jwt_required()
 def get_message(user_id, message_id):
     # claims = get_jwt()
     # VULNERABILITY: No check on the user ID, allowing any user to retrieve any message
-    message = Message.query.get(message_id)
+    message = Message.query.filter_by(id=message_id).first()
     if message == None:
         return {"error": "Not Found"}, 404
     if message.user_id != user_id:
