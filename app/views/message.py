@@ -1,9 +1,6 @@
 # Flask modules
 from flask_jwt_extended import jwt_required
 
-# Flask module for authorization check
-from flask_jwt_extended import get_jwt_identity
-
 # App modules
 from app import app
 from app.models.message import Message
