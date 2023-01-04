@@ -207,7 +207,7 @@ We can see that we check the `id` of the user sending the request, and compare i
 
 - https://auth0.com/blog/forbidden-unauthorized-http-status-codes/
 
-[Link to the demonstration video](https://www.google.com)
+[Link to the demonstration video](https://drive.google.com/file/d/1LbHe_VtzpMNsstY_Bw-lGHQFHo6sUraO/view?usp=sharing)
 
 
 # Part 2
