@@ -25,7 +25,7 @@ class GUID(TypeDecorator):
         elif dialect.name == "postgresql":
             return str(value)
         else:
-            if len(value) != 32:
+            if not isinstance(value, uuid.UUID) and len(value) != 32 and len(value) != 36:
                 return None
             if not isinstance(value, uuid.UUID):
                 return "%.32x" % uuid.UUID(value).int
